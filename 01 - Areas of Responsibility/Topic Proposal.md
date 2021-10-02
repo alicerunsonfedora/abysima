@@ -1,0 +1,7 @@
+# Topic Proposal
+
+I've noticed a lot of work being done in the computational linguistics sector with respect to natural language processing and classification in languages with machine learning; simultaneously, I've also been noticing that we're exploring how we can use artificial intelligence and machine learning to _create_ works of art, music, and other things. I propose that, for this paper, I will experiment with creating a neural network that will _attempt_ to create a new language (not a programming language) based on linguistics data in various sectors (phonology, morphology, etc.) and use this as a platform to discuss the implications of such a technology for the future. Such implications may include better natural language processing, better classification of lexical categories, or even more creative endeavours such as creating custom languages for games.
+
+Thus far, I have taken a look into how the tools I'd likely use works thanks to my advanced machine learning class, and I have designed a very basic [[Experimentation Checklist]] which outlines what I plan to do in regards to primary research and experimentation.
+
+At this time, I will need to focus on adding more secondary sources to the annotated bibliography and creating the generative networks to test out the ideas I have proposed. The proposal also needs to be updated to match the requirements Prof. Narock requests for the project proposal in the machine learning aspects of this project.
