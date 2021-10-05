@@ -3,8 +3,19 @@
 Welcome to the repository/notebook for **Project Abysima**. This notebook contains all of the notes and drafts for the project à la Markdown/[Obsidian](https://obsidian.md), as well as the Juptyer notebooks used to create the networks.
 
 ## 🏃🏻‍♂️ Quick Links
+
+```ad-note
+title: Obsidian Linking
+
+The quick links below use Obsidian's wiki-style linking format; links may not work correctly when viewing other Markdown editors or viewing this document in GitHub. The paths to the links are included as sub-bullet points in this list.
+```
+
 - [[Linguistics Paper]]
+	- `01 - Areas of Responsibility/Linguistics Paper`
 - [[Annotated Bibliography]]
+	- `03 - Resources/Annotated Bibliography`
+
+[View the Jupyter Notebook →](./Abysima.ipynb)
 
 ## What is Project Abysima?
 

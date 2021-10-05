@@ -7,8 +7,11 @@
         "id": "21b651f1eba02bfc",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -73,6 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,7 +92,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           }
         ]
@@ -100,9 +106,10 @@
   },
   "active": "21b651f1eba02bfc",
   "lastOpenFiles": [
+    "README.md",
     "02 - Resources/Annotated Bibliography.md",
+    "02 - Resources/Background Information.md",
     "02 - Resources/Additional Sources/Long-Short-Term-Memory.pdf",
-    "02 - Resources/Potential Generation Methods.md",
-    "02 - Resources/Background Information.md"
+    "02 - Resources/Potential Generation Methods.md"
   ]
 }
