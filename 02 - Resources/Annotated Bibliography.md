@@ -21,8 +21,30 @@ Matcha, Anil Chandra Naidu. “An Introduction to Generative Deep Learning.” _
 
 Although not a scholarly source, this article on Medium provides enough background information on how generative deep learning works, which should provide context for how to design a generative deep learning system capable of creating a language.
 
+```ad-info
+title: See Also
+[[Potential Generation Methods#Generative Deep Learning]]
+```
+
+## [S]: Long Short-Term Memory
+Vennerød, Christian Bakke, et al. “Long Short-Term Memory RNN.” _ArXiv:2105.06756 [Cs]_, May 2021. _arXiv.org_, http://arxiv.org/abs/2105.06756.
+
+[[Long-Short-Term-Memory.pdf]]
+
+This source stems from the IBM article on recurrent neural networks and is supposedly the original paper that talks about the long short-term memory variant of recurrent neural networks, which provide a sense of memory by using control flow via states. It may be helpful to read through this and reference it if this approach is what I implement in the project.
+
+```ad-info
+title: See Also
+[[Potential Generation Methods#Recurrent Neural Networks]]
+```
+
 ## [G] What Are Recurrent Neural Networks?
 
 “What Are Recurrent Neural Networks?” _IBM Cloud Learning Hub_, IBM Cloud Education, 14 Sept. 2020, https://www.ibm.com/cloud/learn/recurrent-neural-networks.
 
 Although IBM is not a scholarly source, their article on recurrent neural networks should also provide context for how they work and whether or not this is a good network to use when generating a neural network for language creation.
+
+```ad-info
+title: See Also
+[[Potential Generation Methods#Recurrent Neural Networks]]
+```

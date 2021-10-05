@@ -1,32 +1,29 @@
 {
   "main": {
-    "id": "bf35a72767460671",
+    "id": "fcdc946a8bec53f7",
     "type": "split",
     "children": [
       {
-        "id": "1a16ce4d414693b9",
+        "id": "21b651f1eba02bfc",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "02 - Resources/Annotated Bibliography.md",
-            "mode": "preview"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "160794977052a058",
+    "id": "b8fafefff2e2582e",
     "type": "split",
     "children": [
       {
-        "id": "46328dcad94fed4d",
+        "id": "6b2266d4a6a4faa5",
         "type": "tabs",
         "children": [
           {
-            "id": "9c4e6d975c18cd37",
+            "id": "b0070587b053fd78",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -34,7 +31,7 @@
             }
           },
           {
-            "id": "95fcadf334e1aace",
+            "id": "81f22ec6f153b341",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -49,27 +46,11 @@
             }
           },
           {
-            "id": "1f878a83a53fb830",
+            "id": "c44c97e2a0c499a5",
             "type": "leaf",
             "state": {
               "type": "starred",
               "state": {}
-            }
-          }
-        ]
-      },
-      {
-        "id": "865e56b2d69ba3cc",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "3b9517501ac18765",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "02 - Resources/Annotated Bibliography.md"
-              }
             }
           }
         ]
@@ -79,20 +60,19 @@
     "width": 300
   },
   "right": {
-    "id": "992e98c38661dce0",
+    "id": "1a9fe3a16cc8a12e",
     "type": "split",
     "children": [
       {
-        "id": "26959c93f4cbf375",
+        "id": "a761fb7251eaf8a0",
         "type": "tabs",
         "children": [
           {
-            "id": "bfc93a58f7443a4a",
+            "id": "cfe2b2b7b7cec000",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 - Resources/Annotated Bibliography.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,6 +82,14 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "a398acd8397eea77",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
           }
         ]
       }
@@ -110,17 +98,11 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "1a16ce4d414693b9",
+  "active": "21b651f1eba02bfc",
   "lastOpenFiles": [
     "02 - Resources/Annotated Bibliography.md",
-    "02 - Resources/Background Information.md",
-    "README.md",
-    "02 - Resources/Potential Avenues.md",
-    "02 - Resources/Additional Sources/DeepGRP-Engineering-Software-GRE.pdf",
-    "03 - Archives/Prewriting Checklist.md",
-    "03 - Archives/Prewriting Ideas.md",
-    "02 - Resources/Untitled.md",
-    "03 - Archives/Topic Proposal - Draft.md",
-    "01 - Areas of Responsibility/Linguistics Paper.md"
+    "02 - Resources/Additional Sources/Long-Short-Term-Memory.pdf",
+    "02 - Resources/Potential Generation Methods.md",
+    "02 - Resources/Background Information.md"
   ]
 }
