@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01 - Areas of Responsibility/Linguistics Paper.md",
+            "file": "02 - Resources/Background Information.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - Areas of Responsibility/Linguistics Paper.md",
+                "file": "02 - Resources/Background Information.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - Areas of Responsibility/Linguistics Paper.md"
+                "file": "02 - Resources/Background Information.md"
               }
             }
           }
@@ -106,15 +106,15 @@
   },
   "active": "34e25af7f0b46272",
   "lastOpenFiles": [
-    "01 - Areas of Responsibility/Linguistics Paper.md",
-    "00 - Projects/Experimentation Checklist.md",
-    "README.md",
-    "Welcome.md",
-    "02 - Resources/Annotated Bibliography.md",
+    "02 - Resources/Background Information.md",
+    "02 - Resources/Untitled.md",
     "02 - Resources/Potential Avenues.md",
-    "02 - Resources/Prewriting Ideas.md",
-    "02 - Resources/Additional Sources/DeepGRP-Engineering-Software-GRE.pdf",
-    "Untitled.md",
-    "01 - Areas of Responsibility/Topic Proposal - Draft 1.md"
+    "02 - Resources/Annotated Bibliography.md",
+    "03 - Archives/Topic Proposal - Draft.md",
+    "03 - Archives/Prewriting Checklist.md",
+    "03 - Archives/Prewriting Ideas.md",
+    "README.md",
+    "01 - Areas of Responsibility/Linguistics Paper.md",
+    "00 - Projects/Experimentation Checklist.md"
   ]
 }
