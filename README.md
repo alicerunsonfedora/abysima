@@ -2,6 +2,10 @@
 
 Welcome to the repository/notebook for **Project Abysima**. This notebook contains all of the notes and drafts for the project à la Markdown/[Obsidian](https://obsidian.md), as well as the Juptyer notebooks used to create the networks.
 
+## 🏃🏻‍♂️ Quick Links
+- [[Linguistics Paper]]
+- [[Annotated Bibliography]]
+
 ## What is Project Abysima?
 
 **Project Abysima** is an attempt a creating a generative neural network that will devise its own language (not programming) based off of existing linguistic rules across languages. The main objective of the project is the following:
