@@ -1,0 +1,12 @@
+/** Customized Theme Settings for Obsidian-Gruvbox Dark */
+
+/** Look for JetBrains Mono, SF Mono, or default back to the theme's monospaced font.*/
+.theme-dark {
+        --font-monospace: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Hack Nerd Font', 'Source Code Pro', monospace;
+}
+
+/** Use the New York or other serif fonts for the preview. */
+.markdown-preview-view {
+        font-family: ui-serif, 'New York', 'Big Caslon', Georgia, Times, serif;
+        line-height: 2rem;
+}
