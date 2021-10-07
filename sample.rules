@@ -7,5 +7,5 @@
 # This file is designed to test the parsing system for IPA phoneme rules.
 # See phoneme_rules.py for more information.
 # 
-[ʃa] -> [Ʊ]
+[ʃa] -> [ʊ]
 [ʃa] -> [i]
