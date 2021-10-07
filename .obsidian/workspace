@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
+            "file": "02 - Resources/Potential Generation Methods.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "02 - Resources/Potential Generation Methods.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "02 - Resources/Potential Generation Methods.md"
               }
             }
           }
@@ -106,10 +106,11 @@
   },
   "active": "21b651f1eba02bfc",
   "lastOpenFiles": [
+    "02 - Resources/Potential Generation Methods.md",
+    "00 - Projects/Experimentation Checklist.md",
     "README.md",
     "02 - Resources/Annotated Bibliography.md",
     "02 - Resources/Background Information.md",
-    "02 - Resources/Additional Sources/Long-Short-Term-Memory.pdf",
-    "02 - Resources/Potential Generation Methods.md"
+    "02 - Resources/Additional Sources/Long-Short-Term-Memory.pdf"
   ]
 }

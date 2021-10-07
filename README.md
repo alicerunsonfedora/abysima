@@ -17,7 +17,7 @@ The quick links below use Obsidian's wiki-style linking format; links may not wo
 
 [View the Jupyter Notebook →](./Abysima.ipynb)
 
-## What is Project Abysima?
+## ℹ️ What is Project Abysima?
 
 **Project Abysima** is an attempt a creating a generative neural network that will devise its own language (not programming) based off of existing linguistic rules across languages. The main objective of the project is the following:
 
@@ -25,7 +25,7 @@ The quick links below use Obsidian's wiki-style linking format; links may not wo
 - What linguistic properties can we use to improve these algorithms?
 - Can we make linguistics and linguistic properties easy to understand for a neural network?
 
-## General Organization
+## 🗄 General Organization
 
 The organization of this project is broken down into four domains:
 

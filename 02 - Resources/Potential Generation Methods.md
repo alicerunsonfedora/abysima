@@ -27,4 +27,13 @@
 	- Long Short Term Memory (LSTM): Use of three gates in 'cells' to control flow of information (see also: [[Long-Short-Term-Memory.pdf]])
 	- Gated Recurrent Unites (GRU): Similar to LSTM, uses hidden states with two gates
 
+### Ideal Usage
+
+Given a list of IPA symbols that represents sounds that go together, predict the next sound.
+
+```
+[kæ] -> [t]
+[kæ] -> [p]
+```
+
 ## Generative Deep Learning

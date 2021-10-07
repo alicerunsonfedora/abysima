@@ -1,7 +1,7 @@
 # Experimentation Checklist
 
 - [x] Consult with Tom Narock and Susan about inter-disciplinary project
-- [ ] Devise an experiment for how to create a language with
+- [x] Devise an experiment for how to create a language with
 	- [ ] Research Generative Deep Learning, Recurrent Neural Networks (see [[Potential Generation Methods]])
 - [ ] Create data models to feed into neural networks
 - [ ] Create neural networks with Keras/Jupyter Notebooks
