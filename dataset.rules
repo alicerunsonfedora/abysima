@@ -7,7 +7,7 @@
 # The following dataset contains common phoneme rules for both English and Japanese.
 # 
 # MARK: JA
-[yo] -> [o]
+[jo] -> [o]
 [om] -> [i]
 [dɛ] -> [s]
 [ma] -> [s]
@@ -17,10 +17,10 @@
 # MARK: EN
 [on] -> [t]
 [st] -> [r]
-[sk] -> [y]
+[sk] -> [j]
 [sk] -> [l]
 [sk] -> [r]
 [sk] -> [w]
-[sp] -> [y]
+[sp] -> [j]
 [sp] -> [l]
 [sp] -> [r]
