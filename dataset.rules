@@ -5,7 +5,22 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # 
 # The following dataset contains common phoneme rules for both English and Japanese.
+# 
+# MARK: JA
+[yo] -> [o]
+[om] -> [i]
+[dɛ] -> [s]
 [ma] -> [s]
 [tɛ] -> [i]
 [or] -> [u]
 [or] -> [i]
+# MARK: EN
+[on] -> [t]
+[st] -> [r]
+[sk] -> [y]
+[sk] -> [l]
+[sk] -> [r]
+[sk] -> [w]
+[sp] -> [y]
+[sp] -> [l]
+[sp] -> [r]
