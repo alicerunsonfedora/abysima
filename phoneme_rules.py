@@ -1,9 +1,17 @@
+# phoneme_rules.py
+# (C) 2021 Marquis Kurt.
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 def parse_file(filepath: str) -> list:
-    """Parses the custom IPA rules file into a list of rules."""
+    """Parses the custom IPA rules file into a list of rules. Comments or lines starting with '#' are ignored."""
     rules = []
     with open(filepath, 'r') as file:
         buffer = file.readlines()
     for line in buffer:
+        if line.startswith("# "):
+            continue
         parts = line.replace("[", "").replace("]", "").strip().split(" -> ")
         rules.append(tuple(parts))
     return rules

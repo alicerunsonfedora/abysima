@@ -1,11 +1,11 @@
-# Sample IPA Rules File
+# Abysima Phoneme Dataset
 # (C) 2021 Marquis Kurt.
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 # 
-# This file is designed to test the parsing system for IPA phoneme rules.
-# See phoneme_rules.py for more information.
-# 
-[ʃa] -> [Ʊ]
-[ʃa] -> [i]
+# The following dataset contains common phoneme rules for both English and Japanese.
+[ma] -> [s]
+[tɛ] -> [i]
+[or] -> [u]
+[or] -> [i]
