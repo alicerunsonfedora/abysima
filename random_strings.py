@@ -6,6 +6,7 @@
 
 from random import randrange, choice
 from string import ascii_lowercase
+from time import perf_counter
 
 
 def new_word(**kwargs) -> str:
@@ -40,6 +41,10 @@ def new_word(**kwargs) -> str:
     return result
 
 if __name__ == "__main__":
-    dictionary = [new_word(min=4) + "\n" for _ in range(500)]
+    _tick = perf_counter()
+    syllables = ["CVCVCV", "CCCVVCCCC", "CVC", "CVVC", "CVVCC", "CCV"]
+    dictionary = [new_word(min=4, syllable=syllables[i % len(syllables)]) + "\n" for i in range(500)]
     with open("test_dict.txt", "w+") as dict_file:
         dict_file.writelines(dictionary)
+    _tock = perf_counter()
+    print(f"Written 500 words in {_tock - _tick:0.4f} seconds")
