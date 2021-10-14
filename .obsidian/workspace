@@ -7,8 +7,11 @@
         "id": "5a8c9bb1921c36fd",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "02 - Resources/Abysima Plans.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -73,6 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "02 - Resources/Abysima Plans.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,7 +92,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "02 - Resources/Abysima Plans.md"
+              }
             }
           }
         ]
@@ -100,6 +106,7 @@
   },
   "active": "5a8c9bb1921c36fd",
   "lastOpenFiles": [
+    "02 - Resources/Abysima Plans.md",
     "02 - Resources/Untitled.md",
     "02 - Resources/Potential Generation Methods.md",
     "02 - Resources/Annotated Bibliography.md",
@@ -108,7 +115,6 @@
     "01 - Areas of Responsibility/Linguistics Paper.md",
     "README.md",
     "00 - Projects/Experimentation Checklist.md",
-    "02 - Resources/Additional Sources/DeepGRP-Engineering-Software-GRE.pdf",
-    "02 - Resources/Additional Sources/Long-Short-Term-Memory.pdf"
+    "02 - Resources/Additional Sources/DeepGRP-Engineering-Software-GRE.pdf"
   ]
 }
