@@ -25,7 +25,14 @@ for line in lines:
 
     if len(results) < 1: continue
     _, word = results[0]
-    words.append(word)
+
+    # Replace long sounds here since ascii_lowercase doesn't contain them.
+    words.append(
+        word.replace("ō", "ou")
+            .replace("ī", "ii")
+            .replace("ā", "aa")
+            .replace("ū", "uu")
+    )
 
 with open("jp-romaji.txt", "w+") as jp_clean:
     jp_clean.writelines([w + "\n" for w in words])
