@@ -15,5 +15,6 @@
     "jupyter.themeMatplotlibPlots": true,
     "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'SF Mono', SFMonoRegular, -system-monospaced, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
-    "editor.lineHeight": 25
+    "editor.lineHeight": 25,
+    "python.formatting.provider": "yapf"
 }
