@@ -11,7 +11,7 @@
         ".ipynb_checkpoints": true
     },
     "jupyter.jupyterServerType": "local",
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Dark+",
     "jupyter.themeMatplotlibPlots": true,
     "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'SF Mono', SFMonoRegular, -system-monospaced, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
