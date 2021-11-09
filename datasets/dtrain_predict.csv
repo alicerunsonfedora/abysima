@@ -1,4 +1,4 @@
-char01,char02,char03,char04,char05,char06,char07,char08,Valid
+char01,char02,char03,char04,char05,char06,char07,char08,prediction
 v,f,t,*,*,*,*,*,invalid
 f,y,u,t,*,*,*,*,invalid
 g,l,e,a,n,i,n,g,valid

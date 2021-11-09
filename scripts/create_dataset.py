@@ -47,7 +47,7 @@ def random_string(max_size: int) -> str:
 
 
 def pad_sequence(sequence: Iterable, max_length: int = 8) -> list:
-    """Returns a list of characters along with an empty space string to pad out to a maximum length.
+    """Returns a list of characters along with a "null character" string to pad out to a maximum length.
 
     Args:
         sequence (Iterable): The iterable of characters to get a padded sequence for.
@@ -57,7 +57,7 @@ def pad_sequence(sequence: Iterable, max_length: int = 8) -> list:
         list: [description]
     """
     diff = max_length - sum(1 for _ in sequence)
-    return [i for i in sequence] + [" " for _ in range(diff)]
+    return [i for i in sequence] + ["*" for _ in range(diff)]
 
 
 if __name__ == "__main__":
@@ -87,15 +87,29 @@ if __name__ == "__main__":
 
     # Create the CSV header that will be used to label features and targets.
     csv_header = ",".join((f"char{i+1:02d}" for i in range(avg_length))) + ",Valid\n"
+    csv_header_predictive = ",".join(
+        (f"char{i+1:02d}" for i in range(avg_length))) + ",prediction\n"
 
     # Write the training data to the training dataset.
-    with open("dtrain.csv", "w+") as train_file:
+    with open("datasets/dtrain.csv", "w+") as train_file:
         train_file.write(csv_header)
         for word, classifier in train:
             train_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
 
     # Write the testing data to the testing dataset.
-    with open("dtest.csv", "w+") as test_file:
+    with open("datasets/dtest.csv", "w+") as test_file:
         test_file.write(csv_header)
         for word, classifier in test:
             test_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
+
+    # Write the training data to the training dataset using the predictive headers.
+    with open("datasets/dtrain_predict.csv", "w+") as train_predict_file:
+        train_predict_file.write(csv_header_predictive)
+        for word, classifier in train:
+            train_predict_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
+
+    # Write the testing data to the testing dataset using the predictive headers.
+    with open("datasets/dtest_predict.csv", "w+") as test_predict_file:
+        test_predict_file.write(csv_header_predictive)
+        for word, classifier in test:
+            test_predict_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
