@@ -15,7 +15,7 @@ The quick links below use Obsidian's wiki-style linking format; links may not wo
 - [[Annotated Bibliography]]
 	- `03 - Resources/Annotated Bibliography`
 
-[View the Jupyter Notebook →](./Abysima.ipynb)
+[View the Jupyter Notebook →](./notebooks/validations.ipynb)
 
 ## ℹ️ What is Project Abysima?
 
