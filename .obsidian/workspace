@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01 - Areas of Responsibility/Linguistics Paper.md",
+            "file": "03 - Archives/Draft 1 - Linguistics Paper.md",
             "mode": "source"
           }
         },
@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "01 - Areas of Responsibility/Linguistics Paper.md",
+            "file": "03 - Archives/Draft 1 - Linguistics Paper.md",
             "mode": "preview"
           }
         },
@@ -73,8 +73,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "1a9fe3a16cc8a12e",
@@ -90,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - Areas of Responsibility/Linguistics Paper.md",
+                "file": "03 - Archives/Draft 1 - Linguistics Paper.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - Areas of Responsibility/Linguistics Paper.md"
+                "file": "03 - Archives/Draft 1 - Linguistics Paper.md"
               }
             }
           }
@@ -120,12 +119,12 @@
   },
   "active": "5a8c9bb1921c36fd",
   "lastOpenFiles": [
-    "01 - Areas of Responsibility/Linguistics Paper.md",
     "03 - Archives/Draft 1 - Linguistics Paper.md",
+    "01 - Areas of Responsibility/Linguistics Paper.md",
+    "02 - Resources/Background Information.md",
+    "02 - Resources/Annotated Bibliography.md",
     "02 - Resources/Additional Sources/Long-Short-Term-Memory.pdf",
     "02 - Resources/Potential Generation Methods.md",
-    "02 - Resources/Annotated Bibliography.md",
-    "02 - Resources/Background Information.md",
     "00 - Projects/Abysima Plans.md",
     "00 - Projects/Experimentation Checklist.md",
     "02 - Resources/Abysima Plans.md",
