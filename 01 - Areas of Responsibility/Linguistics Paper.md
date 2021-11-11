@@ -61,7 +61,9 @@ Upon inspecting the Apple CoreML model, I discovered that the app decided to use
 
 ## Conclusion
 
-I conclude that, through this experiment, it is somewhat possible to make a machine learning model that can validate words to an extent. The Apple CoreML model can predict sniglets as possible words in the English and/or Japanese languages with 92% accuracy, and it was able to assist in creating a small corpus containing five-hundred sniglets. This model could be used to make a more natural spell checking system or help authors create new words in their creative writing. By no means will this network create a full language with all the complexities and nuances of rules that linguists discover and research on a daily basis, but it is a small step in creating something much larger.  If I had more time on this project, I would've lookie
+Despite the successes in this small experiment, however, there are some things I would've like to improve upon in the future. If I had more time on this project, I would've looked into ways of using these words to create phrases and establish syntactic rules for them. Additionally, I would've likely spent more time diagnosing the RNN, since it seemed to perform very poorly; I may have formatted the data in a way that made the RNN perform less optimally.
+
+With that said, I conclude that, through this experiment, it is somewhat possible to make a machine learning model that can validate words to an extent. The Apple CoreML model can predict sniglets as possible words in the English and/or Japanese languages with 92% accuracy, and it was able to assist in creating a small corpus containing five-hundred sniglets. This model could be used to make a more natural spell checking system or help authors create new words in their creative writing. By no means will this network create a full language with all the complexities and nuances of rules that linguists discover and research on a daily basis, but it is a small step in creating something much larger.
 
 ## Works Cited
 
