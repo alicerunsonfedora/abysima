@@ -28,12 +28,21 @@ After creating the models, I evaluated each of them by having them predict wheth
 
 ## Analysis
 
+Figure 2 shows the confusion matrices for each of the machine learning models I designed, trained, and evaluated for five-hundred epochs (iterations). The RNN, despite being ideal for sequential data, performed very poorly, with an accuracy rate of 64% (see Figure 3) and reporting a lot of false negatives. The FCNN, however, performed much better, with an accuracy score of 82%. The Apple CoreML model scored the highest with an accuracy of 92.15% and reporting half as many false negatives and false positives as the FCNN.
+
 ![[output.png|Figure 2]]
 
 > Figure 2: The confusion matrices for each of the different machine learning models.
 
-Figure 2 shows the confusion matrices for each of the machine learning models I designed, trained, and evaluated. The RNN performed very poorly, with an accuracy rate of 64% and reporting a lot of false negatives. I suspect I may have made the network in error 
+| Network | Accuracy Rate | Loss Rate |
+| - | - | - |
+| FCNN | 82.21% | 39.53% |
+| RNN | 64.28% | - |
+| Apple CoreML | 92.15% | 7.85% |
 
+> Figure 3: A table that shows the accuracy rates and loss rates for various machine learning models.
+
+Upon inspecting the Apple CoreML model, I discovered that the app decided to use a logistic regression model, which assumed that the input was linear and that adding the probabilities of each letter together would determine the validity of the word. Logistic regression also works well with binary classification, which the validity problem falls under. Additionally, the network only needed to be trained for ten iterations before reaching its maximum accuracy rate.
 
 ## Sources
 
