@@ -1,7 +1,7 @@
 {
   "baseFontSize": 16,
   "translucency": false,
-  "cssTheme": "Obsidian gruvbox",
+  "cssTheme": "Minimal",
   "theme": "obsidian",
   "enabledCssSnippets": [
     "jb-mono"

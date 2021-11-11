@@ -24,11 +24,17 @@ def new_word(**kwargs) -> str:
     min_length = kwargs.get("min", 3)
     max_length = kwargs.get("max", 12)
     syllabic_structure = kwargs.get("syllable", "CV")
+
     if len(syllabic_structure) > min_length:
         min_length = len(syllabic_structure)
+
+    if len(syllabic_structure) > max_length:
+        raise ValueError(
+            f"Max length cannot be bigger than length of syllable ({len(syllabic_structure)})")
+
     vowels = "aeiouy"
     consonants = [c for c in ascii_lowercase if c not in vowels]
-    word_length = randrange(min_length, max_length)
+    word_length = randrange(min_length, max_length, 1)
     pattern = [0 if i == "C" else 1 for i in syllabic_structure]
 
     result = ""
@@ -40,10 +46,13 @@ def new_word(**kwargs) -> str:
             syllable_idx = 0
     return result
 
+
 if __name__ == "__main__":
     _tick = perf_counter()
     syllables = ["CVCVCV", "CCCVVCCCC", "CVC", "CVVC", "CVVCC", "CCV"]
-    dictionary = [new_word(min=4, syllable=syllables[i % len(syllables)]) + "\n" for i in range(500)]
+    dictionary = [
+        new_word(min=4, syllable=syllables[i % len(syllables)]) + "\n" for i in range(500)
+    ]
     with open("test_dict.txt", "w+") as dict_file:
         dict_file.writelines(dictionary)
     _tock = perf_counter()
