@@ -13,19 +13,19 @@
             "mode": "source"
           }
         },
-        "group": "c54fe2410439421e"
+        "group": "786cf42e14609a7d"
       },
       {
-        "id": "24d0d27cb6f3d187",
+        "id": "364d7ef3a49c2710",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
             "file": "01 - Areas of Responsibility/Linguistics Paper.md",
-            "mode": "source"
+            "mode": "preview"
           }
         },
-        "group": "c54fe2410439421e"
+        "group": "786cf42e14609a7d"
       }
     ],
     "direction": "vertical"
@@ -73,7 +73,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "1a9fe3a16cc8a12e",

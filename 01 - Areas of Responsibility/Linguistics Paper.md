@@ -1,20 +1,28 @@
 # Project Abysima: Determining Word Validity to Generate Random Words for a New Language
 
-Language is one of the most complex and powerful tools humankind has designed and used for centuries. Being able to communicate ideas in such a way that other have agreed upon using sounds and symbols is incredible. This powerful tool has let us discuss research and ideas for experimentation, leading us to new technologies like machine learning. Over the years, we've designed and engineered many machine learning algorithms that can redraw images in a particular style, create or extend music, and even write stories that can be used for video games. Given that we can create these generative networks, this begs the question of whether we can utilize machine learning to create languages. The task would be very daunting and take longer than a semester to study, so I instead proposed an experiment where I generated words against a machine learning model to validate them as possible words in a given language.
+Language is one of the most complex and powerful tools humankind has designed and used for centuries. Being able to communicate ideas in such a way that other have agreed upon using sounds and symbols is incredible. This powerful tool has let us discuss research and ideas for experimentation, leading us to new technologies like machine learning. Over the years, we've designed and engineered many machine learning algorithms that can redraw images in a particular style, create or extend music, and even write stories that can be used for video games. Given that we can create these generative networks, this begs the question whether we can utilize machine learning to create languages. The task would be very daunting and take longer than a semester to study, so I instead proposed an experiment where I generated words against a machine learning model to validate them as possible words in a given language.
 
 ## Background
 Machine learning models are specialized algorithms that attempt to emulate how the human brain works when learning new data. Fundamentally, these algorithms utilize various mathematical operations with matrices and vectors to accomplish this. When a model is given an input to predict, it will attempt to perform those mathematical operations to determine a specific type of output. While engineers and data scientists know that the model will perform these operations, the order in which they are applied, as well as what numbers the model will use, are hidden from the engineers.
 
 ## Methods
-I started the experiment by gathering a large list of words in the English and Japanese language and random strings between three to eight letters in length. 
+I started the experiment by gathering a large list of words in the English and Japanese language and random strings between three and eight letters in length. For each string or word in the list, I marked as either "valid" or "invalid"; after marking them, I shuffled the dataset to make sure the invalid and valid words were scattered about. Next, I broke down the words into their individual letters and put them into separate columns; for words that were less than eight letters in length, I padded the rest of the word with asterisks (\*). The result is a large table of nine columns: the first eight correspond to the letters in the word, and the last column corresponds to its marking (see Figure 1).
 
-For this experiment, I settled on creating three different models that I will compare to determine the best validator: a fully-connected neural network, a recurrent neural network, and an automatically-generated model using Apple's Create ML tool.
+| char01 | char02 | char03 | char04 | char05 | char06 | char07 | char08 | Valid |
+| - | - | - | - | - | - | - | - | - |
+| v | f | t | * | * | * | * | * | invalid |
+| f | y | u | t | * | * | * | * | invalid |
+| a | l | l | o | v | e | r | * | valid   |
 
-A fully-connected neural network (FCNN) is the most common type of machine learning model in which all of the "nodes" in the network are connected to each other. Most fully-connected neural networks will assume that the input data provided is independent of other data and will try to create a generalized equation.
+> Figure 1: A small table that shows how the dataset is created. 
+
+I then split the dataset into two groups: the training data, which will be used to train the networks, and the testing data, which will be used to evaluate the effectiveness of the network. The training data contains eighty percent of the dataset, whereas the testing set will contain the remaining twenty percent. This split is done as a way to mitigate overfitting, where the model overcorrects itself or memorizes the data. I then settled on creating three different models that I will compare to determine the best validator: a fully-connected neural network, a recurrent neural network, and an automatically-generated model using Apple's Create ML tool.
+
+A fully-connected neural network (FCNN) is the most common type of machine learning model in which all the "nodes" in the network are connected to each other. Most fully-connected neural networks will assume that the input data provided is independent of other data and will try to create a generalized equation.
 
 Recurrent neural networks (RNN) extend from FCNNs, with some major differences. RNNs treat the input data will be a sequence; that is, each part of the input comes immediately after the next. An article from the International Business Machines (IBM) Cloud Learning Hub in 2020 notes that these types of networks are commonly used for natural language processing and speech recognition (IBM, para 1). For this experiment, I created a variation of the RNN known as the Long Short-Term Memory network (LSTM). Sepp Hochriter and Jürgen Schmidhuber researched and designed the network in 1997 to improve on the RNN model by adding in additional checks ("gates") and parameters to ensure that the network would learn properly (Hochriter and Schmidhuber, pp. 1-2).
 
-Finally, I created a 
+Finally, I used Apple's Create ML tool to generate a machine learning model, which I will refer to as the "Apple CoreML Model" or the "CoreML Model" for short. The Create ML 
 
 ## Sources
 
