@@ -24,7 +24,7 @@ Recurrent neural networks (RNN) extend from FCNNs, with some major differences. 
 
 Finally, I used Apple's Create ML tool to generate a machine learning model, which I will refer to as the "Apple CoreML Model" or the "CoreML Model" for short. The Create ML tool is a developer tool included in the Xcode suite of developer tools, designed to let developers quickly make machine learning models that can be imported into apps for the iPhone, iPad, Apple Watch, Apple TV, and the Mac. When creating this model, I let the app automatically pick the best algorithm for the dataset and did not specify any parameters, unlike the previous networks. I would then download the model from the app and load it into the same playground as the other two networks.
 
-After creating the models, I evaluated each of them by having them predict whether the words in the testing set were valid. During the process, I would record how accurate they were and how much they were failing (aka. "loss"). I would then take the results and display them graphically with a graph, the confusion matrix, that shows how many predictions were made in the following categories: true positive, true negative, false positive, and false negative. Finally, I would assess which model performed the best and use it to validate words that were randomly generated.
+After creating the models, I evaluated each of them by having them predict whether the words in the testing set were valid. During the process, I would record how accurate they were and how much they were failing (aka. "loss"); it is important to note that these two metrics are not directly related to each other. I would then take the results and display them graphically with a graph, the confusion matrix, that shows how many predictions were made in the following categories: true positive, true negative, false positive, and false negative. Finally, I would assess which model performed the best and use it to validate words that were randomly generated.
 
 ## Analysis
 
@@ -32,12 +32,12 @@ Figure 2 shows the confusion matrices for each of the machine learning models I 
 
 ![[output.png|Figure 2]]
 
-> Figure 2: The confusion matrices for each of the different machine learning models.
+> Figure 2: The confusion matrices for each of the different machine learning models. The top left box in each represents the number of correctly-predicted for true negatives, and the bottom right box represents the number of correctly-predicted true positives.
 
 | Network      | Accuracy Rate | Loss Rate |
 | -----------: | ------------- | --------- |
 | FCNN         | 82.21%        | 39.53%    |
-| RNN          | 64.28%        | -         |
+| RNN          | 64.28%        | -[^1]     |
 | Apple CoreML | 92.15%        | 7.85%     |
 
 > Figure 3: A table that shows the accuracy rates and loss rates for various machine learning models.
@@ -57,18 +57,24 @@ Upon inspecting the Apple CoreML model, I discovered that the app decided to use
 | pain            | Is a real word      |
 | fyevz           | Not feasible        |
 
-> Figure 4. A list of words generated and validated by the Apple CoreML model.
+> Figure 4. A list of words generated and validated by the Apple CoreML model. "Feasibility" derives from a personal analysis of the words.
 
 ## Conclusion
 
 Despite the successes in this small experiment, however, there are some things I would've like to improve upon in the future. If I had more time on this project, I would've looked into ways of using these words to create phrases and establish syntactic rules for them. Additionally, I would've likely spent more time diagnosing the RNN, since it seemed to perform very poorly; I may have formatted the data in a way that made the RNN perform less optimally.
 
-With that said, I conclude that, through this experiment, it is somewhat possible to make a machine learning model that can validate words to an extent. The Apple CoreML model can predict sniglets as possible words in the English and/or Japanese languages with 92% accuracy, and it was able to assist in creating a small corpus containing five-hundred sniglets. This model could be used to make a more natural spell checking system or help authors create new words in their creative writing. By no means will this network create a full language with all the complexities and nuances of rules that linguists discover and research on a daily basis, but it is a small step in creating something much larger.
+With that said, I conclude that, through this experiment, it is somewhat possible to make a machine learning model that can validate words to an extent. The Apple CoreML model can predict sniglets as possible words in the English and/or Japanese languages with 92% accuracy, and it was able to assist in creating a small corpus containing five-hundred sniglets by validating words a random string generator created. This model could be used to make a more natural spell checking system or help authors create new words in their creative writing. By no means will this network create a full language with all the complexities and nuances of rules that linguists discover and research on a daily basis, but it is a small step in creating something much larger.
 
 ## Works Cited
 
 “Appendix:1000 Japanese Basic Words.” _Wiktionary_, 23 Aug. 2021. _Wiktionary_, https://en.wiktionary.org/w/index.php?title=Appendix:1000_Japanese_basic_words&oldid=63736536.
 
+_Create ML_. 3.0 (78.6), Apple Inc., 2021, https://developer.apple.com/machine-learning/create-ml/.
+
+_TensorFlow_. 2.6.0, Google Inc., 2021, https://tensorflow.org.
+
 Vennerød, Christian Bakke, et al. “Long Short-Term Memory RNN.” _ArXiv:2105.06756 [Cs]_, May 2021. _arXiv.org_, http://arxiv.org/abs/2105.06756.
 
 “What Are Recurrent Neural Networks?” _IBM Cloud Learning Hub_, IBM Cloud Education, 14 Sept. 2020, https://www.ibm.com/cloud/learn/recurrent-neural-networks.
+
+[^1]: The loss rate for this network resulted in a non-numeric value, likely indicating it reached too high of a loss value.
