@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Generator: View {
     @AppStorage("generateSize") var generateSize: Int = 1
-    @State var validateResults: Sniglet.Result = .empty()
     @State var showDetails: Bool = false
 
     var body: some View {
@@ -20,10 +19,6 @@ struct Generator: View {
                 GeneratorList()
             }
         }
-    }
-
-    func setSniglet() {
-        validateResults = Sniglet.shared.getNewWords()[0]
     }
 }
 

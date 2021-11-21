@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95511DC2274AC36500234573 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95511DC1274AC36500234573 /* String.swift */; };
 		9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */; };
 		9552F65527432CE2004582D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64427432CE0004582D6 /* ContentView.swift */; };
 		9552F65727432CE2004582D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9552F64527432CE2004582D6 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95511DC1274AC36500234573 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_a_SnigletApp.swift; sourceTree = "<group>"; };
 		9552F64427432CE0004582D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9552F64527432CE2004582D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				95E0697E2744188B0043F568 /* Settings.swift */,
 				95E06987274419870043F568 /* Localizable.strings */,
 				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
+				95511DC1274AC36500234573 /* String.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				9552F66227432DCE004582D6 /* SnigletValidator.mlmodel in Sources */,
 				9552F66527432F0F004582D6 /* Sniglet.swift in Sources */,
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
+				95511DC2274AC36500234573 /* String.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

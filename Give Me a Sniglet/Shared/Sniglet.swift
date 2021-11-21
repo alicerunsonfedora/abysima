@@ -7,33 +7,51 @@
 
 import Foundation
 
+/// A class that contains all of the business logic needed to create and validate sniglets.
 class Sniglet {
+
+    /// A class reference to the machine learning model.
     public typealias Validator = SnigletValidator
+
+    /// A shared instance of the Sniglet class.
+    public static var shared: Sniglet { Sniglet() }
+
+    /// An array of common syllabic structures.
+    public static var commonSyllables: [String] = ["CVCVCV", "CCCVVCC", "CVC", "CVVC", "CVVCC", "CCV"]
 
     private var model: Validator
 
-    public static var commonSyllables: [String] = ["CVCVCV", "CCCVVCC", "CVC", "CVVC", "CVVCC", "CCV"]
-    var vowels = "aeiouy"
-    var consonants = "bcdfghjklmnprqstvwxz"
-
-    public static var shared: Sniglet { Sniglet() }
-
-    public struct Result: Hashable, Identifiable {
+    /// A data structure that contains a sniglet validation result with an ID, validation check, and a confidence rate.
+    public struct Result: Hashable, Identifiable, Equatable {
+        /// The unique identifier for this result.
         var id = UUID()
+
+        /// The word for which the result pertains to.
         var word: String
+
+        /// The validation status of this result.
         var validation: String
+
+        /// The confidence rate of the result.
         var confidence: Double
 
+        /// Returns an empty result.
         public static func empty() -> Result {
             Result(word: "empty", validation: "valid", confidence: 0.0)
         }
 
+        /// Returns a nullish result.
         public static func null() -> Result {
             Result(word: "null", validation: "valid", confidence: 0.0)
         }
 
+        /// Returns an errored result.
         public static func error() -> Result {
             Result(word: "error", validation: "valid", confidence: 0.0)
+        }
+
+        public static func ==(lhs: Result, rhs: Result) -> Bool {
+            return lhs.word == rhs.word && lhs.validation == rhs.validation
         }
     }
 
@@ -41,6 +59,8 @@ class Sniglet {
         model = try! SnigletValidator(configuration: .init())
     }
 
+    /// Returns a list of results from the sniglet validator.
+    /// - Parameter count: The number of words to create.
     public func getNewWords(count: Int = 1) -> [Result] {
         var generatedWords: [String] = []
 
@@ -63,7 +83,7 @@ class Sniglet {
         }
 
         for _ in 0..<batchSize {
-            var newWord = makeWord(limit: minof..<maxof, with: Sniglet.commonSyllables.randomElement() ?? "CV")
+            var newWord = String.makeWord(limit: minof..<maxof, with: Sniglet.commonSyllables.randomElement() ?? "CV")
             if newWord.count < 8 {
                 for _ in newWord.count..<8 {
                     newWord += "*"
@@ -91,49 +111,5 @@ class Sniglet {
             return [.error()]
         }
 
-    }
-
-    public func makeWord(limit wordRange: Range<Int> = 3..<12, with syllabicStruct: String = "CV") -> String {
-        var currentSyllableIdx = 0
-        var result = ""
-        for _ in 0...Int.random(in: wordRange) {
-            if syllabicStruct[currentSyllableIdx] == "V" {
-                result.append(vowels.randomElement() ?? "e")
-            } else {
-                result.append(self.consonants.randomElement() ?? "t")
-            }
-            
-            currentSyllableIdx += 1
-            if currentSyllableIdx >= syllabicStruct.count {
-                currentSyllableIdx = 0
-            }
-        }
-
-        return result
-    }
-
-    /// Returns a randomly-generated word from a range and a specified syllabic structure.
-    public func makeWord(min: Int = 3, max: Int = 12, with syllabicStruct: String = "CV") -> String {
-        makeWord(limit: min..<max, with: syllabicStruct)
-    }
-
-}
-
-extension String {
-    func splitCharacters() -> [String] {
-        self.map { char in String(char) }
-    }
-
-    func asSnigletValidatorInput() -> SnigletValidatorInput {
-        let wordSplit = self.splitCharacters()
-        return SnigletValidatorInput(
-            char01: wordSplit[0], char02: wordSplit[1], char03: wordSplit[2], char04: wordSplit[3],
-            char05: wordSplit[4], char06: wordSplit[5], char07: wordSplit[6], char08: wordSplit[7])
-    }
-}
-
-extension StringProtocol {
-    subscript(offset: Int) -> Character {
-        self[index(startIndex, offsetBy: offset)]
     }
 }
