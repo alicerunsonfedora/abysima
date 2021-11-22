@@ -14,7 +14,8 @@ struct SettingsView: View {
     @AppStorage("algoMinBound") var minGenerationValue: Int = 3
     @AppStorage("algoMaxBound") var maxGenerationValue: Int = 8
     @AppStorage("algoBatchSize") var batchSize: Int = 25
-    @State var sampleText: String = ""
+    @AppStorage("customShapes") var customSyllables: SyllableShapes = SyllableShapes()
+    @State var customSyllableEntry: String = ""
 
     var body: some View {
         NavigationView {
@@ -57,27 +58,68 @@ struct SettingsView: View {
 
     var syllables: some View {
         List {
-            Section {
+            Section(footer: syllableFooter) {
                 HStack {
-                    TextField("Type shape", text: $sampleText)
-                        .textInputAutocapitalization(.characters)
-                    Button(action: {}) {
-                        Text("Add")
+                    TextField("settings.syllable.textprompt", text: $customSyllableEntry)
+                        .textCase(.uppercase)
+                        .font(.system(.body, design: .monospaced))
+                    Button(action: {
+                        customSyllables.append(customSyllableEntry.toSyllableMarker())
+                        customSyllableEntry = ""
+                    }) {
+                        Text("settings.syllable.add")
                     }
+                    .disabled(customSyllableEntry.isEmpty)
                 }
             }
 
+
+
             Section(footer: Text("settings.syllable.footer")) {
-                ForEach(Sniglet.commonSyllables, id: \.self) { syl in
-                    Text(syl)
+                ForEach(customSyllables, id: \.self) { custom in
+                    Text(custom)
+                        .font(.system(.body, design: .monospaced))
                 }
-                .onDelete { _ in print("Yee")}
+                .onDelete { indices in
+                    indices.forEach { idx in customSyllables.remove(at: idx) }
+                }
+                ForEach(SyllableShapes.common(), id: \.self) { syl in
+                    VStack(alignment: .leading) {
+                        Text(syl)
+                            .foregroundColor(.secondary)
+                            .font(.system(.body, design: .monospaced))
+                        Text("Common")
+                            .foregroundColor(.secondary)
+                            .font(.caption)
+                    }
+                }
             }
         }
         .navigationTitle("settings.syllable.title")
         #if os(iOS)
-        .toolbar { EditButton() }
+        .toolbar {
+            EditButton()
+                .disabled(customSyllables.isEmpty)
+        }
         #endif
+    }
+
+    var syllableFooter: some View {
+        Group {
+            if customSyllableEntry.count > 8 {
+                Label {
+                    Text("settings.syllable.limit")
+                } icon: {
+                    Image(systemName: "exclamationmark.triangle")
+                        .foregroundColor(.yellow)
+                }
+            } else if !customSyllableEntry.isMarker {
+                Label("settings.syllable.convert", systemImage: "wand.and.stars")
+            }
+            else {
+                Text("")
+            }
+        }
     }
 }
 

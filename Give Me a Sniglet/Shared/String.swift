@@ -14,6 +14,14 @@ extension String {
     /// A string of consonants.
     public static let consonants = "bcdfghjklmnprqstvwxz"
 
+    public var isMarker: Bool {
+        var succeeded = true
+        self.forEach { char in
+            if char != "C" && char != "V" { succeeded = false }
+        }
+        return succeeded
+    }
+
 
     /// Returns a random sequence of letters shaped around a syllabic structure.
     /// - Parameter wordRange: The range which describes how long the word can be.
@@ -49,7 +57,12 @@ extension String {
     ///
     /// This is commonly used to describe a syllable's shape.
     func toSyllableMarker() -> String {
-        self.map { character in String.vowels.contains(character) ? "V" : "C" }.joined(separator: "")
+        self.lowercased()
+            .map { character in String.vowels.contains(character) ? "V" : "C" }
+            .enumerated()
+            .filter { element in element.offset < 8 }
+            .map { _, element in element }
+            .joined(separator: "")
     }
 
     /// Returns the current string as an input for the Sniglet validation model.

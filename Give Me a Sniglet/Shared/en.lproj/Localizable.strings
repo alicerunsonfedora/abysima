@@ -28,4 +28,8 @@
 "settings.algorithm.batch.explain" = "The batch size determines how many sniglets to generate at a time to ensure at least one valid sniglet appears.";
 
 "settings.syllable.title" = "Syllable Shapes";
-"settings.syllable.footer" = "Syllable shapes describe how to place consonants (C) and vowels (V) together. Shapes may repeat to match the length of the word.";
+"settings.syllable.add" = "Add";
+"settings.syllable.convert" = "This word will be converted into a syllable shape automatically.";
+"settings.syllable.textprompt" = "Type shape or word";
+"settings.syllable.limit" = "This syllable shape is too long and will be trimmed to the first eight characters.";
+"settings.syllable.footer" = "Syllable shapes describe how to place consonants (C) and vowels (V) together. Shapes may repeat to match the length of the word. Common syllable structures cannot be removed.";

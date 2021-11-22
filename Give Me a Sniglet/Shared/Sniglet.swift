@@ -16,9 +16,6 @@ class Sniglet {
     /// A shared instance of the Sniglet class.
     public static var shared: Sniglet { Sniglet() }
 
-    /// An array of common syllabic structures.
-    public static var commonSyllables: [String] = ["CVCVCV", "CCCVVCC", "CVC", "CVVC", "CVVCC", "CCV"]
-
     private var model: Validator
 
     /// A data structure that contains a sniglet validation result with an ID, validation check, and a confidence rate.
@@ -82,8 +79,14 @@ class Sniglet {
             UserDefaults.standard.set(25, forKey: "algoBatchSize")
         }
 
+        var syllableStructs: SyllableShapes = .common()
+        if let customStructs: SyllableShapes = SyllableShapes(
+            rawValue: UserDefaults.standard.string(forKey: "customShapes") ?? "") {
+            syllableStructs += customStructs
+        }
+
         for _ in 0..<batchSize {
-            var newWord = String.makeWord(limit: minof..<maxof, with: Sniglet.commonSyllables.randomElement() ?? "CV")
+            var newWord = String.makeWord(limit: minof..<maxof, with: syllableStructs.randomElement() ?? "CV")
             if newWord.count < 8 {
                 for _ in newWord.count..<8 {
                     newWord += "*"
