@@ -75,7 +75,9 @@ struct GeneratorSingleView: View {
             }
         }
         .onAppear {
-            validateResults = Sniglet.shared.getNewWords()[0]
+            if validateResults == .empty() {
+                validateResults = Sniglet.shared.getNewWords().first ?? .null()
+            }
         }
         .sheet(isPresented: $showDetails) {
             GeneratorExplanation {
@@ -86,7 +88,7 @@ struct GeneratorSingleView: View {
     }
 
     func setSniglet() {
-        validateResults = Sniglet.shared.getNewWords()[0]
+        validateResults = Sniglet.shared.getNewWords().first ?? .null()
     }
 
 }
@@ -133,11 +135,11 @@ struct GeneratorList: View {
 
     func setInitialState() {
         if !validateResults.isEmpty { return }
-        validateResults = Sniglet.shared.getNewWords(count: generateSize)
+        validateResults = Sniglet.shared.getNewWords(count: generateSize).asArray()
     }
 
     func updateState() {
-        validateResults = Sniglet.shared.getNewWords(count: generateSize)
+        validateResults = Sniglet.shared.getNewWords(count: generateSize).asArray()
     }
 }
 

@@ -61,7 +61,7 @@ class Sniglet {
 
     /// Returns a list of results from the sniglet validator.
     /// - Parameter count: The number of words to create.
-    public func getNewWords(count: Int = 1) -> [Result] {
+    public func getNewWords(count: Int = 1) -> Set<Result> {
         var generatedWords: [String] = []
 
         var minof = UserDefaults.standard.integer(forKey: "algoMinBound")
@@ -92,7 +92,7 @@ class Sniglet {
             generatedWords.append(newWord)
         }
 
-        var wordResults: [Result] = []
+        var wordResults: Set<Result> = Set()
 
         do {
             let batchInput = generatedWords.map { word in word.asSnigletValidatorInput() }
@@ -103,12 +103,12 @@ class Sniglet {
                 }
                 .filter { result in result.validation == "valid" }
 
-            for _ in 0..<count {
-                wordResults.append(batchResults.randomElement() ?? .null())
+            while wordResults.count < count {
+                wordResults.update(with: batchResults.randomElement() ?? .null())
             }
             return wordResults
         } catch {
-            return [.error()]
+            return Set(arrayLiteral: .error())
         }
 
     }

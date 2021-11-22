@@ -14,3 +14,10 @@ extension Double {
         return Int(new.rounded())
     }
 }
+
+extension Set where Element: Hashable {
+    /// Returns the set as an array.
+    func asArray() -> [Element] {
+        self.map { c in c }
+    }
+}
