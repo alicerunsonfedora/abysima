@@ -180,7 +180,7 @@ struct GeneratorListDetail: View {
             }
             .padding(.horizontal)
         }
-        .padding(.horizontal)
+        .padding()
         .toolbar {
             ToolbarItem {
                 if !tapToCopy {
@@ -235,6 +235,7 @@ struct GeneratorExplanation: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 48) {
                     Text("generator.explain.detail")
+                        .padding(.horizontal)
                     HStack(spacing: 8) {
                         Spacer()
                         letterNode("a")
@@ -248,11 +249,12 @@ struct GeneratorExplanation: View {
                         Spacer()
                     }
                     Text("generator.explain.detail2")
+                        .padding(.horizontal)
                     Text("generator.explain.detail3")
+                        .padding(.horizontal)
                 }
                 Spacer()
             }
-            .padding(.horizontal)
             .navigationTitle("generator.explain.title")
             .toolbar {
                 Button(action: onDismiss) {

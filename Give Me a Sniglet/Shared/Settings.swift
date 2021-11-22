@@ -15,33 +15,99 @@ struct SettingsView: View {
     @AppStorage("algoMaxBound") var maxGenerationValue: Int = 8
     @AppStorage("algoBatchSize") var batchSize: Int = 25
     @AppStorage("customShapes") var customSyllables: SyllableShapes = SyllableShapes()
+
     @State var customSyllableEntry: String = ""
+    @State var currentPage: Page? = nil
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    enum Page: String, Hashable {
+        case general
+        case algorithm
+        case syllable
+    }
 
     var body: some View {
         NavigationView {
-            List {
-
-                Section(header: Text("settings.general.title"), footer: Text("settings.clipboard.footer")) {
-                    Stepper(value: $generateBatches, in: 1...Int.max) {
-                        Label("Generate \(generateBatches) words", systemImage: "sparkles.rectangle.stack.fill")
-                    }
-                    Toggle(isOn: $allowCopying) {
-                        Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
-                    }
-                }
-
-                boundaries
-                Section(header: Text("settings.algorithm.batch.title"), footer: Text("settings.algorithm.batch.explain")) {
-                    Stepper(value: $batchSize, in: 5...Int.max, step: 5) {
-                        Label("\(batchSize) words", systemImage: "square.stack")
-                    }
-                }
-
-                NavigationLink(destination: { syllables }) {
-                    Label("settings.syllable.title", systemImage: "quote.closing")
-                }
+            if horizontalSizeClass == .compact {
+                bodyPhone
+            } else {
+                bodyTablet
             }
-            .navigationTitle("settings.title")
+
+            if currentPage == nil && horizontalSizeClass == .regular {
+                List {
+                    generalSettings
+                }
+                .navigationTitle("settings.general.title")
+                .navigationBarTitleDisplayMode(.inline)
+            }
+        }
+    }
+
+    var bodyPhone: some View {
+        List {
+            generalSettings
+            boundaries
+            batches
+            NavigationLink(destination: { syllables }) {
+                Label("settings.syllable.title", systemImage: "quote.closing")
+            }
+        }
+        .navigationTitle("settings.title")
+    }
+
+    var bodyTablet: some View {
+        List(selection: $currentPage) {
+            Section {
+                NavigationLink(destination: {
+                        List {
+                            generalSettings
+                        }
+                        .navigationTitle("settings.general.title")
+                        .navigationBarTitleDisplayMode(.inline)
+                }) {
+                    Label("settings.general.title", systemImage: "gear")
+                }
+                .tag(Page.general)
+                NavigationLink(destination: {
+                    List {
+                        boundaries
+                        batches
+                    }
+                    .navigationTitle("settings.algorithm.title")
+                    .navigationBarTitleDisplayMode(.inline)
+                }) {
+                    Label("settings.algorithm.title", systemImage: "waveform")
+                }
+                .tag(Page.algorithm)
+            }
+
+            NavigationLink(destination: { syllables.navigationBarTitleDisplayMode(.inline)
+            }) {
+                Label("settings.syllable.title", systemImage: "quote.closing")
+            }
+            .tag(Page.syllable)
+        }
+        .navigationTitle("settings.title")
+        .listStyle(.sidebar)
+    }
+
+    var generalSettings: some View {
+        Section(header: Text("settings.general.title"), footer: Text("settings.clipboard.footer")) {
+            Stepper(value: $generateBatches, in: 1...Int.max) {
+                Label("Generate \(generateBatches) words", systemImage: "sparkles.rectangle.stack.fill")
+            }
+            Toggle(isOn: $allowCopying) {
+                Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
+            }
+        }
+    }
+
+    var batches: some View {
+        Section(header: Text("settings.algorithm.batch.title"), footer: Text("settings.algorithm.batch.explain")) {
+            Stepper(value: $batchSize, in: 5...Int.max, step: 5) {
+                Label("\(batchSize) words", systemImage: "square.stack")
+            }
         }
     }
 
@@ -130,6 +196,9 @@ struct Settings_Previews: PreviewProvider {
             NavigationView {
                 SettingsView().syllables
             }
+            SettingsView()
+                .previewInterfaceOrientation(.landscapeRight)
+                .previewDevice("iPad mini (6th generation)")
         }
     }
 }
