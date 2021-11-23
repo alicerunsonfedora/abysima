@@ -40,6 +40,7 @@ struct SettingsView: View {
                 }
                 .navigationTitle("settings.general.title")
                 .navigationBarTitleDisplayMode(.inline)
+                .listStyle(.insetGrouped)
             }
         }
     }
@@ -53,22 +54,23 @@ struct SettingsView: View {
                 Label("settings.syllable.title", systemImage: "quote.closing")
             }
         }
+        .listStyle(.insetGrouped)
         .navigationTitle("settings.title")
     }
 
     var bodyTablet: some View {
         List(selection: $currentPage) {
-            Section {
-                NavigationLink(destination: {
-                        List {
-                            generalSettings
-                        }
-                        .navigationTitle("settings.general.title")
-                        .navigationBarTitleDisplayMode(.inline)
-                }) {
-                    Label("settings.general.title", systemImage: "gear")
-                }
-                .tag(Page.general)
+            NavigationLink(destination: {
+                    List {
+                        generalSettings
+                    }
+                    .navigationTitle("settings.general.title")
+                    .navigationBarTitleDisplayMode(.inline)
+            }) {
+                Label("settings.general.title", systemImage: "gear")
+            }
+            .tag(Page.general)
+            Section(header: Text("Generation")) {
                 NavigationLink(destination: {
                     List {
                         boundaries
@@ -80,13 +82,15 @@ struct SettingsView: View {
                     Label("settings.algorithm.title", systemImage: "waveform")
                 }
                 .tag(Page.algorithm)
+                NavigationLink(destination: { syllables.navigationBarTitleDisplayMode(.inline)
+                }) {
+                    Label("settings.syllable.title", systemImage: "quote.closing")
+                }
+                .tag(Page.syllable)
             }
-
-            NavigationLink(destination: { syllables.navigationBarTitleDisplayMode(.inline)
-            }) {
-                Label("settings.syllable.title", systemImage: "quote.closing")
-            }
-            .tag(Page.syllable)
+            #if os(macOS)
+            .collapsible(false)
+            #endif
         }
         .navigationTitle("settings.title")
         .listStyle(.sidebar)
@@ -193,9 +197,11 @@ struct Settings_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SettingsView()
+                .previewDevice("iPhone 13")
             NavigationView {
                 SettingsView().syllables
             }
+                .previewDevice("iPhone 13")
             SettingsView()
                 .previewInterfaceOrientation(.landscapeRight)
                 .previewDevice("iPad mini (6th generation)")

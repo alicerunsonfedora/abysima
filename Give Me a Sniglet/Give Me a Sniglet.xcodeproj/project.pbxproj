@@ -13,6 +13,8 @@
 		9552F65727432CE2004582D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9552F64527432CE2004582D6 /* Assets.xcassets */; };
 		9552F66227432DCE004582D6 /* SnigletValidator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */; };
 		9552F66527432F0F004582D6 /* Sniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66427432F0F004582D6 /* Sniglet.swift */; };
+		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
+		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
 		95E0697C274417F00043F568 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697B274417F00043F568 /* Generator.swift */; };
 		95E0697F2744188B0043F568 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697E2744188B0043F568 /* Settings.swift */; };
@@ -29,6 +31,8 @@
 		9552F65227432CE2004582D6 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SnigletValidator.mlmodel; path = ../../coreml/SnigletValidator.mlmodel; sourceTree = "<group>"; };
 		9552F66427432F0F004582D6 /* Sniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sniglet.swift; sourceTree = "<group>"; };
+		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
+		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
 		95E0697B274417F00043F568 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		95E0697E2744188B0043F568 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -61,13 +65,11 @@
 		9552F64227432CE0004582D6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				957676EE274CA5140011E558 /* Views */,
 				9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */,
 				9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */,
-				9552F64427432CE0004582D6 /* ContentView.swift */,
 				9552F64527432CE2004582D6 /* Assets.xcassets */,
 				9552F66427432F0F004582D6 /* Sniglet.swift */,
-				95E0697B274417F00043F568 /* Generator.swift */,
-				95E0697E2744188B0043F568 /* Settings.swift */,
 				95E06987274419870043F568 /* Localizable.strings */,
 				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
 				95511DC1274AC36500234573 /* String.swift */,
@@ -90,6 +92,26 @@
 				9552F65227432CE2004582D6 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		957676E8274CA3110011E558 /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				95E0697B274417F00043F568 /* Generator.swift */,
+				957676E9274CA3250011E558 /* GeneratorList.swift */,
+				957676EB274CA38A0011E558 /* GeneratorSingle.swift */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
+		957676EE274CA5140011E558 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				957676E8274CA3110011E558 /* Generator */,
+				9552F64427432CE0004582D6 /* ContentView.swift */,
+				95E0697E2744188B0043F568 /* Settings.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +187,14 @@
 				95E0697F2744188B0043F568 /* Settings.swift in Sources */,
 				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
 				9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */,
+				957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */,
 				9552F66227432DCE004582D6 /* SnigletValidator.mlmodel in Sources */,
 				9552F66527432F0F004582D6 /* Sniglet.swift in Sources */,
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
+				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

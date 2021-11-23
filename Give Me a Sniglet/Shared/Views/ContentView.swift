@@ -11,7 +11,6 @@ import CoreML
 struct ContentView: View {
 
     var body: some View {
-
         TabView {
             Generator()
             .tabItem {
