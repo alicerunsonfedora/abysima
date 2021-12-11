@@ -9,21 +9,20 @@ import Foundation
 import SwiftUI
 
 struct GeneratorSingleView: View {
-
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
-    @State var validateResults: Sniglet.Result = .empty()
+    @State var result: Sniglet.Result = .empty()
     @State var showDetails: Bool = false
 
     var body: some View {
         VStack(spacing: 16) {
             Spacer()
             if tapToCopy {
-                Button(action: { UIPasteboard.general.string = validateResults.word }) {
-                    GeneratorResultText(word: validateResults.word)
+                Button(action: { UIPasteboard.general.string = result.word }) {
+                    GeneratorResultText(word: result.word)
                 }
                 .buttonStyle(.plain)
             } else {
-                GeneratorResultText(word: validateResults.word)
+                GeneratorResultText(word: result.word)
             }
 
 
@@ -43,15 +42,12 @@ struct GeneratorSingleView: View {
 
             Spacer()
 
-            GeneratorConfidence(confidence: validateResults.confidence) {
+            GeneratorConfidence(confidence: result.confidence) {
                 showDetails.toggle()
             }
+
         }
-        .onAppear {
-            if validateResults == .empty() {
-                validateResults = Sniglet.shared.getNewWords().first ?? .null()
-            }
-        }
+        .onAppear(perform: setSniglet)
         .sheet(isPresented: $showDetails) {
             GeneratorExplanation {
                 showDetails.toggle()
@@ -61,7 +57,7 @@ struct GeneratorSingleView: View {
     }
 
     func setSniglet() {
-        validateResults = Sniglet.shared.getNewWords().first ?? .null()
+        result = Sniglet.shared.getNewWords().first ?? .null()
     }
 
 }

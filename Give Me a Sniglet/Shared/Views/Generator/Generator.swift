@@ -23,7 +23,7 @@ struct Generator: View {
 }
 
 struct GeneratorResultText: View {
-    @State var word: String
+    var word: String
 
     var body: some View {
         Text(word)
@@ -37,29 +37,39 @@ struct GeneratorConfidenceBar: View {
     var confidence: Double
 
     var body: some View {
-        LinearGradient(
-            colors: [.red, .red, .orange, .yellow, .yellow, .green, .cyan],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
-            .frame(maxHeight: 16)
-            .mask {
-                ProgressView(value: confidence)
-                    .progressViewStyle(.linear)
-                    .padding(.horizontal)
-                .animation(.easeInOut, value: confidence)
+        GeometryReader { geom in
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .foregroundColor(.secondary)
+                    .opacity(0.1)
+                    .frame(width: geom.size.width, height: geom.size.height)
+                LinearGradient(
+                    colors: [.purple, .indigo, .blue, .cyan, .teal],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                    .mask(alignment: .leading) {
+                        Rectangle()
+                            .foregroundColor(.accentColor)
+                            .frame(width: geom.size.width * confidence, height: geom.size.height)
+                    }
             }
-
+            .cornerRadius(geom.size.height / 2)
+        }
+        .frame(minHeight: 2, idealHeight: 8)
     }
 }
 
 struct GeneratorConfidence: View {
-    @State var confidence: Double
+    var confidence: Double
     var onDismissExplanation: () -> Void
 
     var body: some View {
         VStack {
             GeneratorConfidenceBar(confidence: confidence)
+                .frame(height: 6)
+                .padding(.horizontal)
+                .padding(.bottom, 2)
             HStack {
                 Text("**Confidence**: `\(confidence.asPercentage())`%")
                     .foregroundColor(.secondary)
@@ -129,26 +139,35 @@ struct GeneratorConfidenceBar_Previews: View {
                 HStack {
                     Text("30%")
                     GeneratorConfidenceBar(confidence: 0.3)
+                        .frame(height: 8)
                 }
                 .padding()
                 HStack {
                     Text("49%")
                     GeneratorConfidenceBar(confidence: 0.49)
+                        .frame(height: 8)
+
                 }
                 .padding()
                 HStack {
                     Text("75%")
                     GeneratorConfidenceBar(confidence: 0.75)
+                        .frame(height: 8)
+
                 }
                 .padding()
                 HStack {
                     Text("85%")
                     GeneratorConfidenceBar(confidence: 0.85)
+                        .frame(height: 8)
+
                 }
                 .padding()
                 HStack {
                     Text("100%")
                     GeneratorConfidenceBar(confidence: 1.0)
+                        .frame(height: 8)
+
                 }
                 .padding()
                 Spacer()
